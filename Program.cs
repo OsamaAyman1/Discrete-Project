@@ -11,43 +11,41 @@ namespace MyFirstProject
         static void Main(string[] args)
         {
 
-            int n1, n2, z;
+            int x, y, sum = 0;
+            Console.Write("Enter the  start number :");
+            int start = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter number1");
-            n1= int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter number2");
+            Console.Write("Enter the end number:");
+            int end = int.Parse(Console.ReadLine());
 
-            for (n2 = int.Parse(Console.ReadLine()); n2 <= n1; n2++)
+            for (int number = start; number <= end; number++)
             {
-                for (z = 2; z <= n2; z++)
-                    if (n2 % z == 0)
-                    {
-                        break;
-                    }
-                if (n2 == z)
+
+                for (int number2 = 1; number2 <= end; number2++)
                 {
-                    Console.WriteLine(z);
+
+                    if (number % number2 == 0 && number != number2)
+                    {
+
+                        sum += number2;
+                    }
                 }
-                
+
+                if (sum == number)
+                {
+                    Console.WriteLine(number);
+                    Console.WriteLine("is perfect number ");
+                }
+
+                sum = 0;
             }
 
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             Console.ReadKey();
+
+
+
+
+
         }
     }
 }
